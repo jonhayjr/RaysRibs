@@ -1,0 +1,328 @@
+/* ============= GLOBAL SETTINGS ================*/
+html, 
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 62.5%; /*10px*/
+    font-family: Raleway, Helvetica, sans-serif;
+    color: #fffafafd;
+    background-image: url(../img/ribs.jpg);
+    display: grid;
+    grid-gap: 1rem;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-rows: auto 60px auto;
+    grid-template: "header header"
+    "main main"
+    "footer footer";
+}
+
+/* ============= REUSABLE SETTINGS ================*/
+.header,
+.footer {
+    background-color: #DEB887;
+}
+/* ============= HEADER ================*/
+.header {
+    grid-area: header;
+    padding: 20px;
+}
+
+ .navigation__list__logo {
+    width: 100px;
+    height: 100px;
+ }
+ .navigation__list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+ }
+
+.navigation__list__item {
+    list-style: none;
+}
+
+.navigation__list__link {
+    color: #fffafafd;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-bottom: 2px solid transparent;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 2px transparent;
+    transition: border-bottom 0.2s, text-shadow 0.2s;
+}
+
+.navigation__list__link--active:hover {
+    color: #FFFAFA;
+    border-bottom: 2px solid #FFFAFA;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.274);
+}
+
+/* ============= MAIN ================*/
+.main {
+    grid-area: main;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.308);
+}
+
+.main__section__header {
+    font-size: 5rem;
+    padding: 10px;
+}
+
+.main__section__paragraph {
+    font-size: 2rem;
+    line-height: 1.5;
+    padding: 10px 0 30px 0;
+}
+
+.main__section__reservation {
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 10px;
+    margin: 50px;
+    color: #FFFAFA;
+    border: 2px solid #FFFAFA;
+    background-color:#DEB887;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.main__section__reservation--active:hover {
+    color: #DEB887;
+    border: 2px solid #FFFAFA;
+    background-color:#FFFAFA;
+    transition: background-color 0.2s, border 0.2s;   
+}
+
+.main__map {
+    padding: 20px;
+    margin: 20px;
+}
+
+.main__map__location {
+    font-size: 1.2rem;
+}
+
+.main__map__image {
+    border: 10px solid #DEB887;
+    width: 600px;
+    height: 300px;
+
+}
+/* ============= FOOTER ================*/
+.footer {
+    grid-area: footer;
+    text-align: center;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+/*=========== BREAKPOINTS =============*/
+/* Small phones: from 0 to 480xpx */
+@media only screen and (max-width: 480px) {
+body {
+    background-position: center;
+}
+
+.header {
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.navigation {
+    margin: 5px;
+    padding: 0;
+}
+
+.navigation__list {
+    padding: 0;
+    margin: 0;
+    display: block;
+ }
+
+.navigation__list__logo {
+    top: 10px; 
+    left: 10px;
+    position: absolute;
+}
+
+.navigation__list__item {
+    padding: 5px;
+    margin: 0;
+}
+
+.navigation__list__link {
+    font-size: 1.2rem;
+}
+
+.main {
+    width: 50%;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.main__section__header {
+    font-size: 2rem;
+    margin: auto;
+}
+
+.main__section__paragraph {
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.main__section__reservation  {
+   font-size: 1rem; 
+    padding: 5px;
+    margin: 0;
+}
+
+.main__map {
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.main__map__location {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.main__map__image {
+    height: auto;
+    width: 75%;
+}
+
+.footer {
+   position: relative;
+   font-size: 1rem;
+   text-align: center;
+   margin: auto;
+   padding: 5px;
+}
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    body {
+        background-position: center;
+    }
+    
+    .header {
+        text-align: center;
+        align-items: center;
+        padding: 5px;
+    }
+    
+    .navigation {
+        margin: 5px;
+        padding: 0;
+    }
+    
+    .navigation__list {
+        padding: 0;
+        margin: 0;
+        display: block;
+     }
+    
+    .navigation__list__logo {
+    
+    }
+    
+    .navigation__list__item {
+        padding: 15px;
+        margin: 0;
+    }
+    
+    .navigation__list__link {
+        font-size: 2rem;
+    }
+    
+    .main {
+        width: 75%;
+        padding: 10px;
+        margin: 10px auto;
+        text-align: center;
+    }
+    
+    .main__section__header {
+        font-size: 2rem;
+        margin: auto;
+    }
+    
+    .main__section__paragraph {
+        font-size: 1rem;
+        line-height: 2;
+    }
+    
+    .main__section__reservation  {
+       font-size: 1rem; 
+        padding: 5px;
+        margin: 0;
+    }
+    
+    .main__map {
+        text-align: center;
+        vertical-align: middle;
+        padding: 10px;
+    }
+    
+    .main__map__location {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .main__map__image {
+        height: auto;
+        width: 75%;
+    }
+    
+    .footer {
+       position: relative;
+       font-size: 1rem;
+       text-align: center;
+       margin: auto;
+       padding: 5px;
+    }
+    
+}
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+    body {
+        background-position: center;
+    }
+    .navigation {
+        width: 50%;
+        margin: auto;
+    }
+    .navigation__list__item {
+        padding: 15px;
+        margin auto;
+    }
+
+    .navigation__list__link {
+        font-size: 1.6rem;
+    }
+
+    .main {
+        padding: 50px;
+    }
+}
+
+/* Big tablet to 1200px (widths smaller than the 1140px row) */
+@media only screen and (max-width: 1200px) {
+
+}
