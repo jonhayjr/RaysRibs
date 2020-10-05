@@ -3,8 +3,9 @@ html,
 body {
     width: 100%;
     height: 100%;
-    padding: 0;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 body {
@@ -12,11 +13,12 @@ body {
     font-family: Raleway, Helvetica, sans-serif;
     color: #fffafafd;
     background-image: url(../img/ribs.jpg);
+    background-position: center;
     display: grid;
     grid-gap: 1rem;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-template-rows: auto 60px auto;
+    grid-template-rows: auto auto auto;
     grid-template: "header header"
     "main main"
     "footer footer";
@@ -31,11 +33,12 @@ body {
 .header {
     grid-area: header;
     padding: 20px;
+    text-align: center;
 }
 
  .navigation__list__logo {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
  }
  .navigation__list {
     display: flex;
@@ -68,6 +71,8 @@ body {
     grid-area: main;
     text-align: center;
     padding: 30px;
+    width: 75%;
+    margin: auto;
     background-color: rgba(0, 0, 0, 0.308);
 }
 
@@ -128,53 +133,45 @@ body {
 }
 
 /*=========== BREAKPOINTS =============*/
-/* Small phones: from 0 to 480xpx */
+/* Small phones: from 0 to 480px */
 @media only screen and (max-width: 480px) {
-body {
-    background-position: center;
-}
-
 .header {
-    text-align: center;
-    align-items: center;
-    padding: 5px;
+    width: 100%;
 }
 
 .navigation {
-    margin: 5px;
     padding: 0;
+    margin: auto;
 }
 
 .navigation__list {
-    padding: 0;
-    margin: 0;
-    display: block;
+    flex-direction: column;
+    align-self: center;
+    vertical-align: middle;
  }
 
 .navigation__list__logo {
-    top: 10px; 
-    left: 10px;
-    position: absolute;
+    width: 150px;
+    height: 150px;
 }
 
 .navigation__list__item {
-    padding: 5px;
-    margin: 0;
+    padding: 10px;
 }
 
 .navigation__list__link {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .main {
-    width: 50%;
     padding: 10px;
-    margin: 10px auto;
+    margin: auto;
     text-align: center;
+    width: 100%;
 }
 
 .main__section__header {
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin: auto;
 }
 
@@ -206,39 +203,33 @@ body {
 }
 
 .footer {
-   position: relative;
+   width: 100%;
    font-size: 1rem;
    text-align: center;
-   margin: auto;
    padding: 5px;
 }
 }
 
 /* Small phones to small tablets: from 481px to 767px */
 @media only screen and (max-width: 767px) {
-    body {
-        background-position: center;
-    }
-    
+
     .header {
-        text-align: center;
-        align-items: center;
-        padding: 5px;
-    }
-    
-    .navigation {
-        margin: 5px;
-        padding: 0;
-    }
-    
-    .navigation__list {
-        padding: 0;
         margin: 0;
-        display: block;
+        padding: 0;
+    }
+
+    .navigation {
+        margin: 0;
+        padding: 0;  
+    }
+
+    .navigation__list {
+        flex-direction: column;
      }
     
     .navigation__list__logo {
-    
+        width: 150px;
+        height: 150px;
     }
     
     .navigation__list__item {
@@ -247,14 +238,10 @@ body {
     }
     
     .navigation__list__link {
-        font-size: 2rem;
     }
     
     .main {
-        width: 75%;
-        padding: 10px;
-        margin: 10px auto;
-        text-align: center;
+        margin: auto;
     }
     
     .main__section__header {
@@ -265,12 +252,13 @@ body {
     .main__section__paragraph {
         font-size: 1rem;
         line-height: 2;
+        padding: 20px;
     }
     
     .main__section__reservation  {
        font-size: 1rem; 
-        padding: 5px;
-        margin: 0;
+        padding: 10px;
+        margin-top: 20px;
     }
     
     .main__map {
@@ -287,16 +275,21 @@ body {
     .main__map__image {
         height: auto;
         width: 75%;
+        margin: 10px;
     }
     
     .footer {
-       position: relative;
        font-size: 1rem;
        text-align: center;
-       margin: auto;
        padding: 5px;
+       width: 100%;
     }
     
+}
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (min-width: (max-width: 1023px) {
+
 }
 
 /* Small tablet to big tablet: from 768px to 1023px */
@@ -304,25 +297,34 @@ body {
     body {
         background-position: center;
     }
+
+    .header {
+        padding: 0;
+    }
+
     .navigation {
-        width: 50%;
-        margin: auto;
+        margin: 0;
+        padding: 0;
     }
     .navigation__list__item {
         padding: 15px;
-        margin auto;
+        margin: auto;
     }
 
     .navigation__list__link {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .main {
-        padding: 50px;
+        width: 75%;
+        margin: auto;
     }
 }
 
 /* Big tablet to 1200px (widths smaller than the 1140px row) */
 @media only screen and (max-width: 1200px) {
-
+    .main {
+        width: 85%;
+        margin: auto;
+    }
 }
